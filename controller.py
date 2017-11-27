@@ -8,6 +8,7 @@ populations = []
 candidats = []
 
 def menu():
+	# Display current setup
 	if(len(dimensions)):
 		print ("\nSubjetcs  :")
 		for d in dimensions:
@@ -21,9 +22,12 @@ def menu():
 		for c in candidats:
 			print "\t- "+c.name
 
+	# Save to a temporary file
 	file = open("lastSave.j","wb")
 	pickle.dump({"dimensions" : dimensions, "populations" : populations, "candidats" : candidats }, file)
 	file.close()
+
+	# Choose a menu
 	inp = None
 	while ( inp not in map(str,range(5))):
 		print("\n\n[0] Subjects")
@@ -41,9 +45,12 @@ def setDimensions():
 def setPopulation():
 	print("Setting Population...\n")
 	populations.append(Population(raw_input("Population name : "),float(raw_input("Population number : "))))
+
 def setCandidats():
 	print("Setting Candidats...\n")
 	candidats.append(Candidat(raw_input("Candidat name : ")))
+
+# Run the setup and inserts values into the variables
 def setup():
 	print("Setup...\n")
 	for dimension in dimensions:
@@ -68,6 +75,7 @@ def setup():
 				dimension.addCandidate( candidat , int(raw_input("Position [0-100]")))
 
 
+# Calculate the result
 def go():
 	print("Go...\n")
 	for dimension in dimensions:
@@ -88,6 +96,7 @@ def switcher( inp ):
 	funcs[inp]()
 
 if __name__ == '__main__':
+	# Load save file if passed
 	if( len(sys.argv) >= 2 ):
 		file = open(sys.argv[1],"rb")
 		data = pickle.load( file )
@@ -95,5 +104,6 @@ if __name__ == '__main__':
 		dimensions = data["dimensions"]
 		populations = data["populations"]
 		candidats = data["candidats"]
+	# Run menu and await for another function
 	while(True):
 		switcher ( menu() )

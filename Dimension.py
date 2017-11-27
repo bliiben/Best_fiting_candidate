@@ -6,8 +6,10 @@ class Dimension():
 		self.populations = []
 		self.candidates = []
 		self.PRECISION = 100
+
 	def addPopulation( self, population, importance, position, clout ):
 		self.populations.append( { "population" : population, "graph" : self.powerFunction( position, importance, clout ) } )
+		
 	def addCandidate( self, candidate, position ):
 		self.candidates.append( {"candidate" : candidate, "position": position})
 
@@ -15,9 +17,9 @@ class Dimension():
 		for population in self.populations:
 			for candidate in self.candidates:
 				population["population"].candidateAdd( candidate["candidate"] ,population["graph"][ candidate["position"] ] )
-				#print( population["population"].name, candidate["candidate"].name, population["graph"][ candidate["position"] ], self.name)
 
-
+	# This generates the function that define the importance of the question for the population on the subject
+	# It basicly is a sin function where the max amplitude value is at position, and the edges are at position + - clout
 	def powerFunction( self, position, importance, clout ):		
 		graph = [0] * self.PRECISION
 		

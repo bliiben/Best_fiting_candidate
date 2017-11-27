@@ -4,15 +4,16 @@ class Population():
 		self.size = float(size)
 		self.candidatesPoints = []
 	
+	# Add the points for each candidate depensing of the population
 	def candidateAdd( self, candidate, points ):
-
 		for c in self.candidatesPoints:
 			if( c["candidate"] == candidate):
 				c["points"] = c["points"] + points
-				
 				return
+
 		self.candidatesPoints.append( {"candidate" : candidate , "points" : points } )
 
+	# Display how much a population vote for each candidate
 	def __str__( self ):
 		total = 0.0
 		for c in self.candidatesPoints:
@@ -24,6 +25,7 @@ class Population():
 
 		return "\n-" +self.name + "-\n" + sCan
 
+	# Return total vote for a candidate
 	def getPopulationVote( self ):
 		total = 0.0
 		for c in self.candidatesPoints:
