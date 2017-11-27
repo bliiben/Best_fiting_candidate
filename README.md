@@ -1,6 +1,7 @@
 This code is there to find how many votes each condidate will receive, by analysing the electorate on subject that are discussed during the election campain. Considering the importance of each question for the electorate and their willingness to compromise on the subject.
   
-Run **controller.py  **
+Run **run.py** to see an executed example.  
+Run **controller.py** to use the tool :  
   
 Example :   
   
