@@ -29,20 +29,24 @@ Set some candidate
 
 That is the current setup : 
 
-Subjetcs  :
-	- Work
-	- Ecology
+Subjetcs :
+- Work
+- Ecology
 
 Populations
-	- Young (20.0)
-	- Old (30.0)
+- Young (20.0)
+- Old (30.0)
 
 Candidats
-	- Joseph
-	- Andree
+- Joseph
+- Andree
 
 Run 3 - Setup.
-On each subject we setup for each population, we setup the importance of a question. 0 not important, 100 very important. We setup their position on the spectre. 0 one side of the specter, 100 the other side of the spectre. We setup the clout, wich is how much they are willing to compromise. 50 correspond to a willingness to compromise to a position 50+ and 50- from their current position.
+For each population on ech subject
+- We setup the importance of a question. 0 not important, 100 very important.
+- We setup their position on the spectre. 0 one side of the specter, 100 the other side of the spectre.
+- We setup the clout, wich is how much they are willing to compromise. 50 corresponds to a willingness to compromise to a position 50+ and 50- from their current position.
+
 After we setup the position of each candidate.
 
 > Population Young in dimensionWork ? Y/NY
